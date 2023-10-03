@@ -1,3 +1,23 @@
+'''**********************************************************************************
+                                                                                    *
+Project Name: Forcasting_for_Enrollment                                             *
+                                                                                    *
+Programming Language: Python 3.8                                                    *
+                                                                                    *
+Libraries: Pandas 2.1.0    Prophet 1.1.4     Matplotlib 3.7.2                       *
+                                                                                    *
+Creater Name: Qiuhao (Alex) Zhu                                                     *
+                                                                                    *
+Published Date: 10/03/2023                                                          *
+                                                                                    *
+Version: 1.0                                                                        *
+                                                                                    *
+Version: 1.1                                                                        *
+Line 129 were added to store the forecasted data in a csv file for                  *
+visualization. The visualization will be shown in Instadeq.                         *
+                                                                                    *
+**********************************************************************************'''
+
 #!/usr/bin/env python
 # coding: utf-8
 
