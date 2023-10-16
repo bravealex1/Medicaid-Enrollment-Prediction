@@ -1,4 +1,4 @@
-Medicaid Projects
+Medicaid Enrollment and Prediction Projects
 
 ![EMR_Technical_Solutions](https://github.com/bravealex1/Medicaid-Enrollment-Prediction/assets/67205873/351769a1-ea10-46d3-9502-a0051c4ec265)
 
