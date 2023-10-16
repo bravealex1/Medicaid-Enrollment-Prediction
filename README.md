@@ -51,7 +51,7 @@ Inputting the data, editing it, creating and training the model, and visualizing
 Three libraries are required.
 ##### **pandas:**
 **Version of pandas:** 1.5.3
-In the terminal,type
+In the terminal, type
 ```
 pip3 install pandas
 ```
