@@ -2,36 +2,47 @@
   <a href="https://emrts.us" target="_blank"> ![image](https://github.com/tmwang7324/Medicaid-Analysis/assets/121271571/16e51d9d-e2f7-4e49-b407-1005281d932a) </a>
 
 ## Introduction:    
-Medicaid, one of the major insurance programs in the United States, is a joint federal and state program that helps cover medical costs for some people with limited income and resources. It is similar to another major health insurance program, Medicare. However, Medicare is federal health insurance for people 65 or older, and some people under 65 with certain disabilities or conditions. The main target of Medicare is the group of old people or kids, but for Medicaid, it focus on the group with low income. In other words, Medicaid and Medicare are different program for different groups of people. [Here](https://www.hhs.gov/answers/medicare-and-medicaid/what-is-the-difference-between-medicare-medicaid/index.html) is the comparison of Medicaid and Medicare provided by HHS (U.S. Department of Health and Human Service). However, Medicaid is a program that financed by federal government but administrated by states. Therefore, Every states will have individual medicaid programs. Since state and federal government will pay the bills together, it is essential to have future data for future budgets. This is the significance of this project. By using the exsiting data of Medicaid Enrollment and Expenditure, we will forecasat the Medicaid Enrollment and Expenditure for next decade to the governments, to help them adjust the budget. This process of forecasting, is also called "Time Series Analysis". Terminologically, time series analysis is a specific way of analyzing a sequence of data points collected over an interval of time. The essence of this project is to make time series analysis over Medicaid. 
+Medicaid, a prominent insurance program in the United States, is a collaborative federal and state initiative designed to subsidize medical expenses for individuals with constrained income and resources. While it bears similarities to Medicare, another significant health insurance program, there are notable differences between the two. Medicare primarily offers federal health insurance to individuals aged 65 and above, as well as to certain individuals below 65 with specific disabilities or conditions. While Medicare mainly caters to seniors and select younger individuals, Medicaid primarily targets those with limited income. In essence, these are distinct programs catering to unique demographics. You can find a detailed comparison between Medicaid and Medicare provided by the HHS (U.S. Department of Health and Human Service) [here](https://www.hhs.gov/answers/medicare-and-medicaid/what-is-the-difference-between-medicare-medicaid/index.html). Notably, while Medicaid receives federal financing, individual states are responsible for its administration. As a result, each state tailors its Medicaid program to suit its residents. Given that both state and federal governments share the cost, accurate future budgeting is paramount. This project aims to use existing Medicaid Enrollment and Expenditure data to forecast trends for the next decade, assisting governments in budget adjustments. This forecasting approach is termed "Time Series Analysis"—a method dedicated to the examination of data points over specific time intervals. The core objective of this project is to apply time series analysis to Medicaid data.
 
-This project is assigned by [EMRTS](https://emrts.us/) (EMR Techincal Solution), a company provides professional analysis about Medicaid. The original full name of this project is "Reflections on Medicaid Enrollment for the Next Decade", which is one of the blogs from the website. However, in providing the newest analysis with newest data, this project should be done continuously. [Here](https://emrts.us/2021/07/31/reflections-on-medicaid-enrollment-for-the-next-decade/) is the last blog page. For this project, we added more information and data than the one from the blog, which the expenditure of Medicaid would be covered as well. More than that, the form of graph changed to new tool, Instadeq, which will be introduced later. 
+This endeavor is commissioned by [EMRTS](https://emrts.us/) (EMR Technical Solution), a firm specializing in professional Medicaid analyses. Initially named "Reflections on Medicaid Enrollment for the Next Decade", this project aligns with a related blog post on their website. To stay current, this project demands ongoing updates. The most recent update can be found [here](https://emrts.us/2021/07/31/reflections-on-medicaid-enrollment-for-the-next-decade/). For our current iteration, we've enriched the dataset beyond the original blog's scope, incorporating Medicaid expenditure. Additionally, we've transitioned to the Instadeq tool for graphical representation, which will be discussed further.
 
 
 ## Source:
 ### Source Background:
 #### Enrollment:
-Based on the sources from [Kaiser Family Foundation (KFF)](https://www.kff.org/other/state-indicator/medicaid-and-chip-monthly-enrollment/?currentTimeframe=0&sortModel=%7B%22colId%22:%22Location%22,%22sort%22:%22asc%22%7D), and ['Data.Medicaid.gov'](https://data.medicaid.gov/dataset/6165f45b-ca93-5bb5-9d06-db29c692a360/data), the csv file 'data.csv' contains the number of Medicaid Enrollment from 2017 to 2023. In this file, the number of Medicaid Enrollment is counted monthly. 
-Kaiser Family Foundation is the independent source for health policy research, polling, and journalism. It provides the data for most health systems in America objectively. 
-'Data.Medicaid.gov' is an open data tool of CMS, Centers for Medicare & Medicaid Services, provides health coverage to more than 100 million people through Medicare, Medicaid, the Children’s Health Insurance Program, and the Health Insurance Marketplace.
+Drawing from resources provided by the [Kaiser Family Foundation (KFF)](https://www.kff.org/other/state-indicator/medicaid-and-chip-monthly-enrollment/?currentTimeframe=0&sortModel=%7B%22colId%22:%22Location%22,%22sort%22:%22asc%22%7D) and ['Data.Medicaid.gov'](https://data.medicaid.gov/dataset/6165f45b-ca93-5bb5-9d06-db29c692a360/data), the 'data.csv' file encapsulates Medicaid Enrollment figures spanning from 2017 to 2023, recorded on a monthly basis.
+
+The Kaiser Family Foundation stands as an independent authority on health policy research, polling, and journalism, offering objective data on the majority of U.S. health systems. On the other hand, 'Data.Medicaid.gov' is an open-access platform operated by the Centers for Medicare & Medicaid Services (CMS). CMS oversees the health coverage of over 100 million individuals via Medicare, Medicaid, the Children’s Health Insurance Program, and the Health Insurance Marketplace.
 #### Expenditure:
-The main source for Medicaid Expenditure is the [U.S. Department of Health and Human Service](https://oig.hhs.gov/fraud/medicaid-fraud-control-units-mfcu/). Under the section of "Expenditure&Statistics", the charts of specific expenditures of medicaid from 2010 to 2022 are listed. The data is from the ferderal government of the U.S., which is reliable. This project will only use the expenditures of total medicaid. The pie chart of medicaid expenditure that will be mentioned later uses the data of year 2022, listed in the "FY 2022 Chart". The file 'Medicaid_Expenditure_2010-2022.csv' is the csv file containing the total expenditures of medicaid from 2010 to 2022. 
+Our primary reference for Medicaid Expenditure comes from the [U.S. Department of Health and Human Service](https://oig.hhs.gov/fraud/medicaid-fraud-control-units-mfcu/). Within their "Expenditure & Statistics" section, you'll find detailed charts showcasing Medicaid expenditures from 2010 to 2022, a testament to the reliable data provided by the U.S. federal government. For the scope of this project, we will concentrate solely on the total Medicaid expenditures. An upcoming pie chart will depict 2022's data, as extracted from the "FY 2022 Chart". The 'Medicaid_Expenditure_2010-2022.csv' file holds this comprehensive dataset detailing Medicaid's total expenditures spanning 2010 to 2022.
 
 ## Instadeq:
-[Instadeq](https://instadeq.com/) is a website that can convert csv file to the chart under most requirements. Under the easy operation, the file can be filtered, grouped, and form multiple charts to satify different requirements.
-'data.csv' have two different charts: [(1): pie chart to show medicaid enrollment by states.](https://mmiscloud.us/s/@zyang/medicaid-enrollment-pie/) [(2) bar chart to show medicaid enrollment by month from 2017 to 2023.](https://mmiscloud.us/s/@zyang/medicaid-enrollment-layout-by-report-date/).   
-'Medicaid_Expenditure_2010-2022.csv' also has three graphs from Instadeq:[(1): pie chart to show medicaid expenditure by states in 2022](https://mmiscloud.us/s/@zyang/medicaid-expenditure-pie/) [(2) bar chart to show medicaid expenditure yearly from 2010 to 2022](https://mmiscloud.us/s/@zyang/medicaid-expenditure-bar-yearly/) [(3) bar chart to show medicaid expenditure by month from 2010 to 2022](https://mmiscloud.us/s/@zyang/medicaid-expenditure-bar-monthly/).
+[Instadeq](https://instadeq.com/) is a versatile platform capable of transforming CSV files into various chart formats to meet a wide array of requirements. Its user-friendly interface allows for effortless filtering, grouping, and the creation of multiple charts to cater to specific needs. 
 
-**Notice:** (3) is graphed by csv file 'Expenditure_Monthly_data_2010-2022.csv', and this file is created by python file 'Expenditure_Forecasting_Monthly.py'. 'Expenditure_Monthly_data_2010-2022.csv' is a file that used linear interpolation by 'Expenditure_Yearly_data-2010-2022.csv'. The trend of both (2) and (3) is same, but (3) lists specific months. 
+For our dataset, 'data.csv', we've produced two distinct visualizations using Instadeq:
+1. A [pie chart](https://mmiscloud.us/s/@zyang/medicaid-enrollment-pie/) displaying Medicaid enrollment by states.
+2. A [bar chart](https://mmiscloud.us/s/@zyang/medicaid-enrollment-layout-by-report-date/) showcasing Medicaid enrollment month by month from 2017 to 2023.
 
-As two csv files containing the forecasted data, there are two Instadeq graphs of these two forecasting: [(1): Bar chart of **medicaid enrollment yearly** forecasting from 2023 to 2033.](https://mmiscloud.us/s/@zyang/layout-of-bar-graph-of-forcasted-medicaid-enrollment/) [(2): Bar chart of **medicaid expenditure yearly** forecasting from 2023 to 2032.](https://mmiscloud.us/s/@zyang/medicaid-forecast-expenditure-from-2023-to-2032/)
+Similarly, the file 'Medicaid_Expenditure_2010-2022.csv' has been visualized through three separate charts:
+1. A [pie chart](https://mmiscloud.us/s/@zyang/medicaid-expenditure-pie/) representing Medicaid expenditure by states in 2022.
+2. A [bar chart](https://mmiscloud.us/s/@zyang/medicaid-expenditure-bar-yearly/) illustrating yearly Medicaid expenditure from 2010 to 2022.
+3. Another [bar chart](https://mmiscloud.us/s/@zyang/medicaid-expenditure-bar-monthly/) highlighting Medicaid expenditure on a monthly basis from 2010 to 2022.
+
+**Notice:**
+The chart labeled as (3) is derived from the CSV file named 'Expenditure_Monthly_data_2010-2022.csv'. This particular file is generated using the Python script 'Expenditure_Forecasting_Monthly.py'. To craft 'Expenditure_Monthly_data_2010-2022.csv', linear interpolation was applied to the data from 'Expenditure_Yearly_data-2010-2022.csv'. It's noteworthy to mention that while the trends observed in charts (2) and (3) align, chart (3) offers granularity by detailing specific months.
+
+Additionally, we have two forecasting visualizations generated from two distinct CSV files:
+
+1. A [bar chart](https://mmiscloud.us/s/@zyang/layout-of-bar-graph-of-forcasted-medicaid-enrollment/) forecasting **yearly Medicaid enrollment** from 2023 to 2033.
+2. Another [bar chart](https://mmiscloud.us/s/@zyang/medicaid-forecast-expenditure-from-2023-to-2032/) projecting the **yearly Medicaid expenditure** from 2023 to 2032.
 
 ## Prophet:
-Prophet, a library designed for time series analysis for both **Python** and **R** language. Prophet is an open-source tool from Facebook used for forecasting time series data which helps businesses understand and possibly predict the market. It is based on a decomposable additive model where non-linear trends fit with seasonality, it also takes into account the effects of holidays. [Here](https://facebook.github.io/prophet/) is the official website of Prophet. Also, the github site about Prophet is [here](https://github.com/facebook/prophet). The official website can provide some basic ideas about Prophet, which is more general, but the github site of Prophet is more professional, and it provides more detailed and directed information, which is more helpful for a learner. The site provides detailed version of Prophet, so the users can choose suitable version. 
+Prophet is a library tailored for time series analysis and is compatible with both **Python** and **R** languages. Developed as an open-source project by Facebook, Prophet is designed for forecasting time series data, enabling businesses to better understand and potentially predict market trends. The library uses a decomposable additive model where non-linear trends are fitted with seasonality, and it also factors in the impact of holidays. For an overview, visit the [official Prophet website](https://facebook.github.io/prophet/). For those seeking a more in-depth dive, the [Prophet GitHub repository](https://github.com/facebook/prophet) provides detailed documentation and version-specific information, proving invaluable for learners.
 
-Prophet is the primary tool we use for forecasting, in which both forecasting will apply Prophet. 
+Prophet is our primary tool for forecasting. Both of our forecasting endeavors leverage its capabilities.
 
 ## Installation:
-Inputing the data, editing data, creating and training the model, and ploting the model are the completed processes of forecasting the data. This project is completed by Python and R. The installation of Python and R ,and the specific libraries are required to run the script.
+Inputting the data, editing it, creating and training the model, and visualizing the results comprise the entire forecasting process. This project utilizes both Python and R. To run the script, the installation of Python, R, and specific libraries is required.
 ### Python Installation:
 **Version of Python:** 3.8.1 or above
 
@@ -60,12 +71,12 @@ pip3 install prophet
 ```
 pip list
 ```
-Type this command in terminal
+Type this command in the terminal
 ### R Installation:
 **Version of R:** 4.3.1 or above
 
 **Website:** www.R-project.org
-#### R Packages Installtion:
+#### R Packages Installation:
 To install the packages of R, **you will need to open the console of R**.
 ##### **prophet:**
 **Version of prophet:** 1.0.0
