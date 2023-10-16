@@ -67,7 +67,7 @@ In the terminal, type
 ```
 pip3 install prophet
 ```
-### Notice:###
+**Notice:**
 If you are using Windows OS, please replace pip3 with pip in the terminal instead.
 
 ##### **Version Check:**
