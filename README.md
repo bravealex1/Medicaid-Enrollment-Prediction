@@ -1,3 +1,5 @@
+Medicaid Projects
+
 ![EMR_Technical_Solutions](https://github.com/bravealex1/Medicaid-Enrollment-Prediction/assets/67205873/351769a1-ea10-46d3-9502-a0051c4ec265)
 
 Medicaid stands as one of the principal insurance programs in the United States, operating as a collaborative initiative between federal and state governments to assist with medical costs for individuals with limited income and resources. It bears similarities to Medicare, another major health insurance program, but they serve distinct demographics. While Medicare is a federal health insurance program primarily for people aged 65 or older, and some under 65 with specific disabilities or conditions, Medicaid predominantly focuses on individuals and families with low income.
