@@ -51,7 +51,7 @@ Inputting the data, editing it, creating and training the model, and visualizing
 Three libraries are required.
 ##### **pandas:**
 **Version of pandas:** 1.5.3
-In the terminal, type
+If you are using Mac OS, in the terminal, type
 ```
 pip3 install pandas
 ```
@@ -67,6 +67,9 @@ In the terminal, type
 ```
 pip3 install prophet
 ```
+### Notice:###
+If you are using Windows OS, please replace pip3 with pip in the terminal instead.
+
 ##### **Version Check:**
 ```
 pip list
